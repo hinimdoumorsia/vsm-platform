@@ -21,7 +21,7 @@ La plateforme permet :
 - Une collaboration temps réel via WebSocket (plusieurs experts peuvent travailler ensemble où qu'ils soient dans le monde)
 - Une interface rapide et fluide
 - Un lien direct entre le terrain et la modélisation
-- Une préparation pour l'immersion VR
+- Une immersion VR déjà fonctionnelle avec support WebXR (Meta Quest, HTC Vive, etc.)
 
 **VSM Platform réinvente la cartographie des flux de valeur pour l'industrie 4.0.**
 

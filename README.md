@@ -615,4 +615,6 @@ Pour des questions, suggestions ou rapports de bugs :
 
 ---
 
-**Merci d'utiliser VSM Platform ! **
+**Merci d'utiliser VSM Platform !** 
+
+Cette plateforme est en **développement continu**. Comme l'esprit **Kaizen** le nécessite, nous améliorons constamment les fonctionnalités, l'expérience utilisateur et les performances. N'hésitez pas à contribuer, suggérer des améliorations ou signaler des bugs. Ensemble, construisons l'outil VSM de demain ! 

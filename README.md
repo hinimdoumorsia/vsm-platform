@@ -7,6 +7,13 @@
 **Statut**: Ce projet est actuellement **porté pour une intégration future en réalité virtuelle (VR/XR)** afin de permettre une visualisation immersive et collaborative des flux de processus. La version actuelle fournit une base solide web et 3D pour cette transition.
 
 ---
+## *Aperçu rapide de la plateforme*
+
+Voici un aperçu animé de **VSM Platform** en action, montrant l'éditeur 2D synchronisé avec la vue 3D immersive :
+
+![Démo VSM Platform](image/mon-demo.gif)
+
+> **Vidéo démo** : Visualisation en temps réel du flux de valeur, synchronisation 2D ↔ 3D, et interface interactive.
 
 ## **Problématiques des Interfaces Traditionnelles**
 

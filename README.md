@@ -1,7 +1,5 @@
 #  VSM Platform — Plateforme de Cartographie de Flux de Valeur
 
-## **Introduction**
-
 ## **Pourquoi VSM Platform ?**
 
 **VSM Platform** est une plateforme industrielle pensée selon une nouvelle manière, dédiée à la **cartographie et l'optimisation des flux de valeur** (Value Stream Mapping) dans les processus de fabrication et les chaînes logistiques. Conçue avec une architecture modulaire et des interfaces intuitives, elle combine des outils d'analyse 2D/3D avec un moteur de simulation avancé et des calculs KPI Lean en temps réel.

@@ -34,35 +34,35 @@ Voici un aperçu animé de **VSM Platform** en action, montrant l'éditeur 2D sy
 
 ### Comment VSM Platform résout ces problèmes :
 
-#### 1️⃣ **Synchronisation 2D ↔ 3D Bidirectionnelle**
-- ✓ Modèle unique (Zustand store)
-- ✓ Modifications 2D → mise à jour 3D instantanée
-- ✓ Navigation 3D → édition 2D synchronisée
-- ✓ Cohérence garantie
+#### 1️ **Synchronisation 2D ↔ 3D Bidirectionnelle**
+-  Modèle unique (Zustand store)
+- Modifications 2D → mise à jour 3D instantanée
+- Navigation 3D → édition 2D synchronisée
+- Cohérence garantie
 
 #### 2️⃣ **Simulation en Temps Réel**
-- ✓ Moteur à événements discrets intégré
-- ✓ Calcul KPI live pendant la simulation
-- ✓ Comparaison État Actuel ↔ État Futur
-- ✓ Identification des goulots d'étranglement
+-  Moteur à événements discrets intégré
+-  Calcul KPI live pendant la simulation
+-  Comparaison État Actuel ↔ État Futur
+-  Identification des goulots d'étranglement
 
 #### 3️⃣ **Visualisation 3D Immersive**
-- ✓ Three.js + React Three Fiber pour rendu haute performance
-- ✓ OrbitControls pour exploration intuitive
-- ✓ Prêt pour intégration WebXR (Meta Quest, HTC Vive, etc.)
-- ✓ Planification future pour immersion totale en VR
+- Three.js + React Three Fiber pour rendu haute performance
+- OrbitControls pour exploration intuitive
+- Prêt pour intégration WebXR (Meta Quest, HTC Vive, etc.)
+- Planification future pour immersion totale en VR
 
 #### 4️⃣ **Dashboard KPI Avancé**
-- ✓ 7 KPI Lean calculés automatiquement
-- ✓ Graphiques interactifs (Recharts)
-- ✓ Comparaison visuelle améliorations
-- ✓ Export multi-formats (PDF, Excel, PNG, JSON)
+- 7 KPI Lean calculés automatiquement
+- Graphiques interactifs (Recharts)
+- Comparaison visuelle améliorations
+- Export multi-formats (PDF, Excel, PNG, JSON)
 
 #### 5️⃣ **Collaborative & Scalable**
-- ✓ WebSocket STOMP pour collaboration temps réel
-- ✓ Backend Spring Boot robuste
-- ✓ PostgreSQL pour persistance
-- ✓ REST API complète
+- WebSocket STOMP pour collaboration temps réel
+- Backend Spring Boot robuste
+- PostgreSQL pour persistance
+- REST API complète
 
 ---
 
@@ -82,60 +82,60 @@ Plateforme web industrielle de Value Stream Mapping combinant :
 ## *Étapes des Travaux Réalisés*
 
 ### **Phase 1 : Analyse et Architecture (Fondations)**
-- ✅ Définition de l'architecture modulaire frontend/backend
-- ✅ Conception du modèle de données VSM complet
-- ✅ Sélection des frameworks (React, React Flow, Three.js, Spring Boot)
-- ✅ Conception de la synchronisation 2D ↔ 3D
+- Définition de l'architecture modulaire frontend/backend
+- Conception du modèle de données VSM complet
+- Sélection des frameworks (React, React Flow, Three.js, Spring Boot)
+- Conception de la synchronisation 2D ↔ 3D
 
 ### **Phase 2 : Développement Backend**
-- ✅ API REST complète (Spring Boot)
-- ✅ Configuration JWT + OAuth2 (SecurityConfig)
-- ✅ Schéma PostgreSQL avec migrations Flyway
-- ✅ Services métier (VSM, KPI, Simulation, Export)
-- ✅ WebSocket STOMP pour collaboration temps réel
+- API REST complète (Spring Boot)
+- Configuration JWT + OAuth2 (SecurityConfig)
+- Schéma PostgreSQL avec migrations Flyway
+- Services métier (VSM, KPI, Simulation, Export)
+- WebSocket STOMP pour collaboration temps réel
 
 ### **Phase 3 : Développement Frontend - Édition**
-- ✅ Éditeur 2D avec React Flow
-- ✅ 13 symboles VSM (SVG React components)
-- ✅ Panneau de propriétés interactif
-- ✅ Palette drag & drop
-- ✅ Toolbar (undo/redo/zoom)
-- ✅ Timeline (état actuel/futur)
+-  Éditeur 2D avec React Flow
+-  13 symboles VSM (SVG React components)
+-  Panneau de propriétés interactif
+- Palette drag & drop
+- Toolbar (undo/redo/zoom)
+-  Timeline (état actuel/futur)
 
 ### **Phase 4 : Développement Frontend - 3D & Synchronisation**
-- ✅ Scène Three.js avec OrbitControls
-- ✅ Synchronisation bidirectionnelle (Zustand store)
-- ✅ Conversion coordonnées 2D → 3D
-- ✅ Animations et interactions 3D
-- ✅ Support pour intégration VR future
+-  Scène Three.js avec OrbitControls
+- Synchronisation bidirectionnelle (Zustand store)
+-  Conversion coordonnées 2D → 3D
+-  Animations et interactions 3D
+-  Support pour intégration VR future
 
 ### **Phase 5 : Simulation & KPI**
-- ✅ Moteur de simulation à événements discrets
-- ✅ Calcul des 7 KPI Lean
-- ✅ Calcul Lead Time, VAT, WIP, Takt Time
-- ✅ Comparaison État Actuel ↔ État Futur
-- ✅ Évènements WebSocket de simulation
+- Moteur de simulation à événements discrets
+- Calcul des 7 KPI Lean
+- Calcul Lead Time, VAT, WIP, Takt Time
+- Comparaison État Actuel ↔ État Futur
+- Évènements WebSocket de simulation
 
 ### **Phase 6 : Dashboard & Reporting**
-- ✅ Dashboard KPI avec Recharts
-- ✅ Graphiques interactifs
-- ✅ Export multi-formats
+- Dashboard KPI avec Recharts
+- Graphiques interactifs
+- Export multi-formats
   - PDF via jsPDF
   - Excel (XLSX)
   - PNG (html2canvas)
   - JSON
 
 ### **Phase 7 : Tests & Déploiement**
-- ✅ Tests unitaires backend
-- ✅ Tests d'intégration API
-- ✅ Docker support (docker-compose.yml)
-- ✅ Configuration multi-environnements (dev, prod)
+- Tests unitaires backend
+- Tests d'intégration API
+- Docker support (docker-compose.yml)
+- Configuration multi-environnements (dev, prod)
 
 ### **Phase 8 : Documentation & Préparation VR** (En cours)
-- ✅ Génération de cette documentation
-- ⏳ Support WebXR
-- ⏳ Contrôles manettes VR
-- ⏳ Mode immersif Multi-utilisateurs
+-  Génération de cette documentation
+- Support WebXR
+- Contrôles manettes VR
+- Mode immersif Multi-utilisateurs
 
 ---
 
@@ -236,7 +236,7 @@ npm run preview
 
 ```
 vsm-platform/
-├── docker-compose.yml          # 🐳 Configuration Docker complète
+├── docker-compose.yml          # Configuration Docker complète
 ├── README.md
 ├── frontend/
 │   ├── src/
@@ -247,18 +247,18 @@ vsm-platform/
 │   │   │   └── simulationApi.ts
 │   │   ├── components/
 │   │   │   ├── editor/
-│   │   │   │   ├── VSMEditor.tsx       ✅ Éditeur React Flow principal
+│   │   │   │   ├── VSMEditor.tsx       Éditeur React Flow principal
 │   │   │   │   ├── PropertyPanel.tsx   # Panneau de propriétés nœud
 │   │   │   │   ├── SymbolPalette.tsx   # Palette drag & drop
 │   │   │   │   ├── Toolbar.tsx         # Barre d'outils (undo/redo/zoom)
 │   │   │   │   └── TimelineBar.tsx     # Barre de temps (état actuel/futur)
 │   │   │   ├── 3d/
-│   │   │   │   └── VSMScene3D.tsx      ✅ Scène Three.js synchronisée (Prêt VR)
+│   │   │   │   └── VSMScene3D.tsx      Scène Three.js synchronisée (Prêt VR)
 │   │   │   ├── simulation/
 │   │   │   │   ├── SimulationPanel.tsx # Contrôles simulation
 │   │   │   │   └── SimEngine.ts        # Moteur temps discret
 │   │   │   ├── dashboard/
-│   │   │   │   └── KPIDashboard.tsx    ✅ Dashboard KPI + graphiques
+│   │   │   │   └── KPIDashboard.tsx    Dashboard KPI + graphiques
 │   │   │   ├── export/
 │   │   │   │   └── ExportModal.tsx     # Modal d'export
 │   │   │   └── ui/                     # Composants UI réutilisables
@@ -266,9 +266,9 @@ vsm-platform/
 │   │   │   ├── useWebSocket.ts         # WebSocket STOMP
 │   │   │   └── ...
 │   │   ├── store/
-│   │   │   └── vsmStore.ts             ✅ Zustand global store (2D ↔ 3D sync)
+│   │   │   └── vsmStore.ts             Zustand global store (2D ↔ 3D sync)
 │   │   ├── types/
-│   │   │   └── vsm.types.ts            ✅ Types TypeScript complets
+│   │   │   └── vsm.types.ts            Types TypeScript complets
 │   │   └── pages/
 │   │       ├── EditorPage.tsx
 │   │       └── DashboardPage.tsx
@@ -280,7 +280,7 @@ vsm-platform/
     ├── pom.xml
     └── src/main/
         ├── java/com/vsm/platform/
-        │   ├── VSMApplication.java      ✅ Classe main Spring Boot
+        │   ├── VSMApplication.java      Classe main Spring Boot
         │   ├── controller/
         │   │   ├── VSMController.java
         │   │   ├── KPIController.java
@@ -288,11 +288,11 @@ vsm-platform/
         │   │   └── ExportController.java
         │   ├── service/
         │   │   ├── VSMService.java
-        │   │   ├── KPIService.java      ✅ Calculs KPI côté serveur
+        │   │   ├── KPIService.java      Calculs KPI côté serveur
         │   │   ├── SimulationService.java
         │   │   └── ExportService.java
         │   ├── domain/
-        │   │   ├── model/               ✅ Entities JPA
+        │   │   ├── model/               Entities JPA
         │   │   └── enums/
         │   ├── repository/              # Spring Data JPA
         │   ├── dto/                     # Request / Response DTOs
@@ -302,11 +302,11 @@ vsm-platform/
         │   └── websocket/
         │       └── VSMWebSocketHandler.java
         └── resources/
-            ├── application.yml          ✅ Configuration complète
+            ├── application.yml          Configuration complète
             ├── application-dev.yml
             ├── application-prod.yml
             └── db/migration/
-                └── V1__init_schema.sql  ✅ Schéma PostgreSQL
+                └── V1__init_schema.sql  Schéma PostgreSQL
 ```
 
 ---

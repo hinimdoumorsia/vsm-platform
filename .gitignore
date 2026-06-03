@@ -6,3 +6,6 @@
 ".env" 
 "*.log" 
 ".env" 
+"frontend/node_modules/" 
+"frontend/.vite/" 
+"backend/target/" 

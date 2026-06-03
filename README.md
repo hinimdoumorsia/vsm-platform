@@ -69,7 +69,7 @@ Voici un aperçu animé de **VSM Platform** en action, montrant l'éditeur 2D sy
 - Three.js + React Three Fiber pour rendu haute performance
 - OrbitControls pour exploration intuitive
 - Prêt pour intégration WebXR (Meta Quest, HTC Vive, etc.)
-- Planification future pour immersion totale en VR
+- Immersion VR déjà fonctionnelle et opérationnelle
 
 #### 4️⃣ **Dashboard KPI Avancé**
 - 7 KPI Lean calculés automatiquement
@@ -126,7 +126,7 @@ Plateforme web industrielle de Value Stream Mapping combinant :
 - Synchronisation bidirectionnelle (Zustand store)
 -  Conversion coordonnées 2D → 3D
 -  Animations et interactions 3D
--  Support pour intégration VR future
+- Support VR intégré et fonctionnel (WebXR)
 
 ### **Phase 5 : Simulation & KPI**
 - Moteur de simulation à événements discrets

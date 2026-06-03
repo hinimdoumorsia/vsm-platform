@@ -320,7 +320,66 @@ vsm-platform/
 | GET     | `/api/v1/export/{id}/json`           | Exporter JSON                  |
 
 ---
+## **Réalité Virtuelle (VR) et Intégration de Casque**
 
+### Affichage 3D sans casque
+- La scène 3D est visible directement dans le navigateur via la page 3D.
+- Utilisez la souris :
+  - Clic gauche + glisser = rotation
+  - Molette = zoom
+  - Clic droit + glisser = déplacement caméra
+- Ceci fonctionne sur tous les postes, casque ou non.
+
+### Utiliser un casque VR avec le projet
+1. Ouvrez le navigateur compatible WebXR :
+   - Chrome/Edge avec support WebXR
+   - Oculus Browser (Quest/Meta)
+   - Firefox Reality / WebXR compatible
+2. Lancez le frontend : `npm run dev`
+3. Accédez à `http://localhost:5173`
+4. Activez la vue 3D dans l’application.
+5. Cliquez sur le bouton **Entrer en VR** affiché en superposition.
+
+### Casques recommandés
+- Meta Quest 2 / Quest 3 (via Oculus Link, Air Link ou navigateur intégré)
+- HTC Vive / Vive Pro / Vive Cosmos
+- Valve Index
+- Windows Mixed Reality
+- Pico 4 / Pico 5
+
+### Configuration d’un casque externe connecté au PC
+#### Meta Quest via Oculus Link (USB)
+1. Installez **Oculus PC App**.
+2. Connectez le Quest au PC en USB.
+3. Activez **Oculus Link** dans le casque.
+4. Ouvrez un navigateur compatible WebXR sur le PC.
+5. Accédez à `http://localhost:5173` et entrez en VR.
+
+#### Meta Quest via Air Link (sans fil)
+1. Dans l’application Oculus PC, activez **Air Link**.
+2. Connectez le Quest au PC en Wi-Fi.
+3. Lancez le navigateur Oculus ou un navigateur WebXR compatible.
+4. Accédez à `http://localhost:5173`.
+
+#### Casques SteamVR / OpenXR
+1. Installez **SteamVR** et démarrez-le.
+2. Configurez **OpenXR** en runtime par défaut si nécessaire.
+3. Démarrez votre casque et ouvrez un navigateur WebXR compatible.
+4. Accédez à `http://localhost:5173`.
+
+### Vérifications et conseils
+- Si la page ne propose pas de mode VR, votre navigateur n’est peut-être pas WebXR compatible.
+- Assurez-vous que le navigateur a l’autorisation d’utiliser WebXR.
+- Si l’accès WebXR échoue dans le navigateur, testez avec un casque connecté directement au PC ou utilisez l’application Oculus Browser.
+- Si un casque externe ne s’affiche pas, vérifiez le runtime OpenXR et la reconnaissance du casque dans Windows.
+
+### Meilleures pratiques pour dev VR
+- Utilisez un navigateur récent et mettez à jour le runtime VR.
+- Redémarrez le casque après installation d’un runtime ou d’un lien USB.
+- Laisser la scène 3D tourner dans le navigateur permet de tester sans VR.
+- Pour les tests immersifs, utilisez une session VR sur casque avec `Entrer en VR`.
+
+---
 ## **Architecture et Flux de Données**
 
 ### Flux 2D → 3D Synchronisé

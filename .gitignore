@@ -2,3 +2,4 @@ node_modules/
 frontend/node_modules/ 
 frontend/.vite/ 
 backend/target/ 
+Uncaught SyntaxError: The requested module '/node_modules/.vite/deps/@react-three_xr.js?v=d6f312f4' does not provide an export named 'DefaultXRControllers' (at VSMScene3D.tsx:11:33)

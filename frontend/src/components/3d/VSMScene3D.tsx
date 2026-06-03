@@ -6,8 +6,9 @@ import React, { useRef, useMemo, Suspense } from 'react';
 import { Canvas, useFrame, ThreeEvent } from '@react-three/fiber';
 import {
   OrbitControls, Grid, Text, Html,
-  RoundedBox, Cone, Torus,
+  RoundedBox, Cone, Line,
 } from '@react-three/drei';
+import { XR, Interactive, createXRStore } from '@react-three/xr';
 import * as THREE from 'three';
 import { useVSMStore, useActiveDiagram } from '../../store/vsmStore';
 import type { VSMNode, VSMNodeType } from '../../types/vsm.types';
@@ -38,6 +39,18 @@ function to3D(x: number, y: number, canvasWidth = 2000, canvasHeight = 1500) {
   };
 }
 
+function VRStartButton({ store }: { store: ReturnType<typeof createXRStore> }) {
+  return (
+    <button
+      type="button"
+      className="absolute right-4 top-4 z-10 rounded-full bg-blue-600 px-3 py-2 text-xs font-semibold text-white shadow-lg shadow-black/20 hover:bg-blue-500"
+      onClick={() => store.enterVR().catch(() => undefined)}
+    >
+      Entrer en VR
+    </button>
+  );
+}
+
 // ---- 3D Process Machine ----
 const ProcessMachine: React.FC<{ node: VSMNode; selected: boolean; onClick: () => void }> = ({
   node, selected, onClick,
@@ -55,17 +68,18 @@ const ProcessMachine: React.FC<{ node: VSMNode; selected: boolean; onClick: () =
   });
 
   return (
-    <group position={[pos.x, 0, pos.z]} onClick={(e: ThreeEvent<MouseEvent>) => { e.stopPropagation(); onClick(); }}>
-      {/* Machine body */}
-      <RoundedBox ref={meshRef} args={[2.2, 1.6, 2.2]} radius={0.12} castShadow>
-        <meshStandardMaterial
-          color={color}
-          metalness={0.4}
-          roughness={0.5}
-          emissive={selected ? color : '#000000'}
-          emissiveIntensity={selected ? 0.25 : 0}
-        />
-      </RoundedBox>
+    <Interactive onSelect={onClick}>
+      <group position={[pos.x, 0, pos.z]} onClick={(e: ThreeEvent<MouseEvent>) => { e.stopPropagation(); onClick(); }}>
+        {/* Machine body */}
+        <RoundedBox ref={meshRef} args={[2.2, 1.6, 2.2]} radius={0.12} castShadow>
+          <meshStandardMaterial
+            color={color}
+            metalness={0.4}
+            roughness={0.5}
+            emissive={selected ? color : '#000000'}
+            emissiveIntensity={selected ? 0.25 : 0}
+          />
+        </RoundedBox>
 
       {/* Machine top indicator (utilization) */}
       {pd && (
@@ -102,7 +116,8 @@ const ProcessMachine: React.FC<{ node: VSMNode; selected: boolean; onClick: () =
           </div>
         </Html>
       )}
-    </group>
+      </group>
+    </Interactive>
   );
 };
 
@@ -113,14 +128,16 @@ const InventoryMarker: React.FC<{ node: VSMNode; onClick: () => void }> = ({ nod
   const height = Math.max(0.6, Math.min(3, qty / 50));
 
   return (
-    <group position={[pos.x, 0, pos.z]} onClick={(e: ThreeEvent<MouseEvent>) => { e.stopPropagation(); onClick(); }}>
-      <Cone args={[0.9, height, 4]} position={[0, height / 2, 0]} castShadow>
-        <meshStandardMaterial color="#8B5CF6" metalness={0.2} roughness={0.7}/>
-      </Cone>
-      <Text position={[0, height + 0.3, 0]} fontSize={0.22} color="#8B5CF6" anchorX="center">
-        {qty} units
-      </Text>
-    </group>
+    <Interactive onSelect={onClick}>
+      <group position={[pos.x, 0, pos.z]} onClick={(e: ThreeEvent<MouseEvent>) => { e.stopPropagation(); onClick(); }}>
+        <Cone args={[0.9, height, 6]} position={[0, height / 2, 0]} castShadow>
+          <meshPhysicalMaterial color="#8B5CF6" metalness={0.45} roughness={0.35} clearcoat={0.2} />
+        </Cone>
+        <Text position={[0, height + 0.3, 0]} fontSize={0.22} color="#8B5CF6" anchorX="center">
+          {qty} units
+        </Text>
+      </group>
+    </Interactive>
   );
 };
 
@@ -151,9 +168,13 @@ const FlowConnector: React.FC<{ source: VSMNode; target: VSMNode; animated: bool
 
   return (
     <group>
-      <line geometry={geometry}>
-        <lineBasicMaterial color="#3B82F6" linewidth={2} opacity={0.6} transparent/>
-      </line>
+      <Line
+        points={[[s.x, 0.1, s.z], [t.x, 0.1, t.z]]}
+        color="#3B82F6"
+        lineWidth={2}
+        transparent
+        opacity={0.6}
+      />
       {animated && (
         <mesh ref={particleRef} position={[s.x, 0.2, s.z]} castShadow>
           <sphereGeometry args={[0.15, 8, 8]}/>
@@ -179,7 +200,7 @@ const SceneContent: React.FC = () => {
 
   return (
     <>
-      <hemisphereLight intensity={0.8} skyColor="#ffffff" groundColor="#444444" />
+      <hemisphereLight intensity={0.8} color="#ffffff" groundColor="#444444" />
       <ambientLight intensity={0.7}/>
       <directionalLight position={[10, 10, 5]} intensity={1.2} castShadow />
       <pointLight position={[-10, 5, -5]} intensity={0.6} color="#60A5FA"/>
@@ -242,16 +263,23 @@ const SceneContent: React.FC = () => {
 };
 
 // ---- Main 3D View export ----
-export const VSMScene3D: React.FC = () => (
-  <div className="w-full h-full bg-gray-950 rounded-lg overflow-hidden">
-    <Canvas
-      shadows
-      camera={{ position: [0, 18, 32], fov: 55, near: 0.1, far: 300 }}
-      gl={{ antialias: true, alpha: false }}
-    >
-      <Suspense fallback={null}>
-        <SceneContent />
-      </Suspense>
-    </Canvas>
-  </div>
-);
+export const VSMScene3D: React.FC = () => {
+  const xrStore = useMemo(() => createXRStore(), []);
+
+  return (
+    <div className="relative h-full w-full bg-gray-950 rounded-lg overflow-hidden">
+      <VRStartButton store={xrStore} />
+      <Canvas
+        shadows
+        camera={{ position: [0, 16, 28], fov: 55, near: 0.1, far: 300 }}
+        gl={{ antialias: true, alpha: false }}
+      >
+        <Suspense fallback={null}>
+          <XR store={xrStore}>
+            <SceneContent />
+          </XR>
+        </Suspense>
+      </Canvas>
+    </div>
+  );
+};

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { VSMEditor } from './components/editor/VSMEditor';
 import { VSMScene3D } from './components/3d/VSMScene3D';
 import { SimulationPanel } from './services/simulation/SimulationPanel';
@@ -30,7 +30,13 @@ function App() {
         </div>
 
         <div className="flex items-center gap-2">
-          {/* View mode buttons */}
+          <button
+            onClick={() => setViewMode('3d')}
+            className="px-3 py-1.5 text-xs bg-emerald-50 text-emerald-600 rounded-lg hover:bg-emerald-100"
+          >
+            🚀 Mode VR
+          </button>
+
           <div className="flex bg-gray-100 rounded-lg p-0.5">
             {[
               { mode: '2d', label: '2D', icon: '📐' },

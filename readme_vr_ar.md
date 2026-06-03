@@ -200,4 +200,3 @@ npm run dev
 ## 12. Notes supplémentaires
 
 - Ce guide est centré sur la configuration VR telle qu’elle est implémentée aujourd’hui.
-- Si tu veux que j’ajoute un vrai mode AR ou un guide de configuration pas à pas pour un casque spécifique, dis-le et je l’ajoute.

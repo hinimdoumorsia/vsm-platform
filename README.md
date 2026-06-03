@@ -2,9 +2,30 @@
 
 ## **Introduction**
 
-**VSM Platform** est une plateforme industrielle innovante dédiée à la **cartographie et l'optimisation des flux de valeur** (Value Stream Mapping) dans les processus de fabrication et les chaînes logistiques. Conçue avec une architecture modulaire et des interfaces intuitives, elle combine des outils d'analyse 2D/3D avec un moteur de simulation avancé et des calculs KPI Lean en temps réel.
+## **Pourquoi VSM Platform ?**
 
-**Statut**: Ce projet est actuellement **porté pour une intégration future en réalité virtuelle (VR/XR)** afin de permettre une visualisation immersive et collaborative des flux de processus. La version actuelle fournit une base solide web et 3D pour cette transition.
+**VSM Platform** est une plateforme industrielle pensée selon une nouvelle manière, dédiée à la **cartographie et l'optimisation des flux de valeur** (Value Stream Mapping) dans les processus de fabrication et les chaînes logistiques. Conçue avec une architecture modulaire et des interfaces intuitives, elle combine des outils d'analyse 2D/3D avec un moteur de simulation avancé et des calculs KPI Lean en temps réel.
+
+**Statut** : Ce projet est actuellement **porté pour une intégration future en réalité virtuelle (VR/XR)** afin de permettre une visualisation immersive et collaborative des flux de processus. La version actuelle fournit une base solide web et 3D pour cette transition.
+
+### **Les limites des approches actuelles :**
+
+Les interfaces 2D actuelles sont lentes et complexes. Les ingénieurs et industriels réalisent encore leurs VSM sur papier ou Excel après une visite terrain. Il existe un décalage entre la phase d'observation terrain et la phase de modélisation, ce qui entraîne des pertes d'informations, des oublis et des erreurs.
+
+La collaboration avec un expert distant (en France, aux États-Unis ou ailleurs) est extrêmement difficile. Il est également complexe de travailler à plusieurs simultanément sur le même diagramme.
+
+### **La solution VSM Platform :**
+
+Avec l'utilisation de technologies modernes — **React (Three.js)** pour le frontend 2D/3D, **Spring Boot** pour le backend robuste, et **WebSocket** pour la collaboration temps réel — nous proposons une **plateforme VSM complètement immersive et synchronisée 2D/3D**.
+
+La plateforme permet :
+- Une synchronisation en temps réel entre la vue 2D et la vue 3D
+- Une collaboration temps réel via WebSocket (plusieurs experts peuvent travailler ensemble où qu'ils soient dans le monde)
+- Une interface rapide et fluide
+- Un lien direct entre le terrain et la modélisation
+- Une préparation pour l'immersion VR
+
+**VSM Platform réinvente la cartographie des flux de valeur pour l'industrie 4.0.**
 
 ---
 ## *Aperçu rapide de la plateforme*
